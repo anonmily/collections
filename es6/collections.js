@@ -90,13 +90,11 @@ export class Collection{
 
 	// Merges collection data with the provided array based on the values of an ID key/column (used to determine uniqueness of the value)
 	merge = ( new_data, id_key ) => {
+		let current_values = this.data.map( x => x[id_key] ).sort()
 		new_data.forEach( x => {
-			let new_val = {}
-			new_val[id_key] = x[id_key]
-
-			let exists = this.has(new_val),
+			let new_val = x[id_key],
+				exists = current_values.indexOf(new_val) > 0,
 				not_exists = !exists
-
 			if( not_exists ){
 				this.data.push( x )
 			}else{
