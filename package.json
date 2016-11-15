@@ -1,0 +1,26 @@
+{
+  "name": "@anonmily/collections",
+  "version": "0.0.6",
+  "description": "Representation of a collection of objects. Filter, sort, map, and query at will.",
+  "main": "./es5",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anonmily/react-complex-pagination"
+  },
+  "author": "Michelle Liu",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.18.2",
+    "babel-plugin-transform-class-properties": "^6.18.0",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "mocha-jsdom": "^1.1.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.0",
+    "simply-is": "^2.5.8"
+  }
+}
