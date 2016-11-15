@@ -146,13 +146,13 @@ var _initialiseProps = function _initialiseProps() {
 	};
 
 	this.merge = function (new_data, id_key) {
+		var current_values = _this.data.map(function (x) {
+			return x[id_key];
+		}).sort();
 		new_data.forEach(function (x) {
-			var new_val = {};
-			new_val[id_key] = x[id_key];
-
-			var exists = _this.has(new_val),
+			var new_val = x[id_key],
+			    exists = current_values.indexOf(new_val) > 0,
 			    not_exists = !exists;
-
 			if (not_exists) {
 				_this.data.push(x);
 			} else {

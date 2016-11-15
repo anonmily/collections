@@ -1,6 +1,6 @@
 {
   "name": "@anonmily/collections",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Representation of a collection of objects. Filter, sort, map, and query at will.",
   "main": "./es5",
   "scripts": {
