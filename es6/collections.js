@@ -45,9 +45,7 @@ export class Collection{
 	filter = (filters) => {
 		if( is.array(filters) ){
 			filters.forEach( filter => {
-				console.log('filtering', filter)
 				this.data = _.filter( this.data, filter )
-				console.log(this.data)
 			})
 		}else{
 			this.data = _.filter( this.data, filters )

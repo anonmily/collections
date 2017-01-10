@@ -108,9 +108,7 @@ var _initialiseProps = function _initialiseProps() {
 	this.filter = function (filters) {
 		if (_simplyIs2.default.array(filters)) {
 			filters.forEach(function (filter) {
-				console.log('filtering', filter);
 				_this.data = _lodash2.default.filter(_this.data, filter);
-				console.log(_this.data);
 			});
 		} else {
 			_this.data = _lodash2.default.filter(_this.data, filters);
