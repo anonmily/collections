@@ -142,6 +142,28 @@ describe('Collections:', () => {
 				done()
 			})
 		})
+		it('filtering should not affect original collection if cloned', done => {
+			let collection = new Collection([
+				{ a: 6, b: 5 }, 
+				{ a: 6, b: 3 }, 
+				{ a: 4, b: 1}
+			])
+			expect( collection.get() ).to.deep.equal([
+				{ a: 6, b: 5 }, 
+				{ a: 6, b: 3 }, 
+				{ a: 4, b: 1}
+			])
+			let filtered_collection = collection.clone().filter([ { a: 6 }, (x => x.b > 4) ]).get()
+			expect( filtered_collection ).to.deep.equal([
+				{ a: 6, b: 5 }
+			])
+			expect( collection.get() ).to.deep.equal([
+				{ a: 6, b: 5 }, 
+				{ a: 6, b: 3 }, 
+				{ a: 4, b: 1}
+			])
+			done()
+		})
 	})
 
 	describe('Collections.map', () => {

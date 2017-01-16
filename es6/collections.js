@@ -72,7 +72,7 @@ export class Collection{
 
 	// Clones this current Collection
 	clone = () => {
-		return _.cloneDeep(this)
+		return new Collection(this.get())
 	}
 
 	// Is there an element that matches?

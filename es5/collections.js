@@ -131,7 +131,7 @@ var _initialiseProps = function _initialiseProps() {
 	};
 
 	this.clone = function () {
-		return _lodash2.default.cloneDeep(_this);
+		return new Collection(_this.get());
 	};
 
 	this.has = function (filters) {
